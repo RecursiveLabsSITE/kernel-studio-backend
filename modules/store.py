@@ -1,11 +1,10 @@
-```python
 """
 Storage module — PostgreSQL-backed storage
 Handles all data persistence for kernels
 """
 
-import json
 import os
+import json
 import psycopg2
 from psycopg2.extras import RealDictCursor
 from typing import List, Dict, Optional
@@ -158,3 +157,4 @@ class Store:
             """, (kernel_id,))
             results = cur.fetchall()
             return [json.loads(row['contradiction_data']) for row in results]
+```
