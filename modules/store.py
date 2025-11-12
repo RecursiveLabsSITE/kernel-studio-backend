@@ -157,4 +157,3 @@ class Store:
             """, (kernel_id,))
             results = cur.fetchall()
             return [json.loads(row['contradiction_data']) for row in results]
-```
