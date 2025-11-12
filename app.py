@@ -31,13 +31,8 @@ app = FastAPI(
 # TODO: Restrict in production
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "https://web-sdgdb1c-a78b-4819-bfbd-21d4170dcaec-fiemapreview.figma.site",
-        "https://*.figma.site",  # Allow all Figma preview domains
-        "http://localhost:3000",
-        "http://localhost:5173",
-    ],
-    allow_credentials=True,
+    allow_origins=["*"],  # Allow all origins
+    allow_credentials=False,  # Must be False when using "*"
     allow_methods=["*"],
     allow_headers=["*"],
 )
