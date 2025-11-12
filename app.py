@@ -25,11 +25,18 @@ app = FastAPI(
     version="1.0.0"
 )
 
+
+
 # CORS middleware - allow all origins for development
 # TODO: Restrict in production
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, specify your frontend domain
+    allow_origins=[
+        "https://web-sdgdb1c-a78b-4819-bfbd-21d4170dcaec-fiemapreview.figma.site",
+        "https://*.figma.site",  # Allow all Figma preview domains
+        "http://localhost:3000",
+        "http://localhost:5173",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
